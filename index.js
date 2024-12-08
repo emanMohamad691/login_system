@@ -120,9 +120,13 @@ if (signUpPage === "signUpPage") {
 var login = document.body.id;
 if (login === "login") {
 
+
+
   var isValid = false;
   function validationLogin() {
     isValid = false;
+    console.log(isValid);
+    
     for (var i = 0; i < allInputs.length; i++) {
           allInputs[i].addEventListener("input", function() {
             displayMessage("");
@@ -132,22 +136,24 @@ if (login === "login") {
       displayMessage("invalidAllInput");
     }
     else if(localStorage.getItem("users") === null){
+      console.log("null");
+      
       displayMessage("incorrectEAndP");
     }
     else if(localStorage.getItem("users") !== null){
       allUsers = JSON.parse(localStorage.getItem("users"));
-      for(var i = 0; i<allUsers.length; i++){
-       if(!(allUsers[i].email === userEmail.value && allUsers[i].password === userPassword.value)){
-        displayMessage("incorrectEAndP");
-       }
-       else
-    {
-      isValid = true;
-      currentUser = allUsers[i].name;
-      
-      
-    }
+      for(var i = 0; i<allUsers.length; i++){   
+       if(allUsers[i].email === userEmail.value && allUsers[i].password === userPassword.value){
         
+        isValid= true;
+        currentUser = allUsers[i].name;
+        break;
+       } 
+      }
+      
+      if(!isValid){
+console.log("user not",isValid);
+displayMessage("incorrectEAndP");
       }
       
     }
@@ -157,6 +163,7 @@ if (login === "login") {
     e.preventDefault();
    validationLogin();
    if(isValid){
+   console.log("good");
    
        clear();
       location.href = `./pages/home.html?name=${currentUser}`;
@@ -171,5 +178,6 @@ var home = document.body.id;
 if (home === "home") {
   var params = new URLSearchParams(location.search);
   welcome.innerHTML = `Welcome ${params.get("name")}`;
+
  
 }
