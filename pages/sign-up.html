@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>sign up</title>
+    <link rel="stylesheet" href="../bootstrap-5.3.3-dist/css/bootstrap.min.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../main.css" />
+  </head>
+
+  <body id="signUpPage">
+    <section>
+      <div class="container">
+        <div class="w-75 m-auto p-5 mt-5 " >
+          <h1  class="text-capitalize text-center mb-4">Smart Login System</h1>
+          <form class="text-center ">
+            <input
+              type="text"
+              class="form-control mb-3 rounded-1"
+              id="userName"
+              placeholder="Enter your name"
+              autocomplete="username"
+            />
+
+            <p id="invalidName" class="text-danger d-none">Enter valid name</p>
+            <input
+              type="email"
+              class="form-control mb-3 rounded-1"
+              id="userEmail"
+              placeholder="Enter your email"
+              autocomplete="email"
+            />
+            <p id="invalidEmail" class="text-danger d-none">Enter valid email</p>
+            <p id="existEmail" class="text-danger d-none">Email already exists</p>
+
+            <input
+              type="password"
+              class="form-control mb-4 rounded-1"
+              id="userPassword"
+              placeholder="Enter your password"
+              autocomplete="new-password"
+            />
+            <p id="invalidPassword" class="text-danger d-none">Your password must include:
+              (At least 8 characters,An uppercase letter,A lowercase letter,A special character) </p>
+
+            <p id="invalidAllInput" class="text-danger d-none">All inputs is required</p>
+
+            <button id="signUp" type="submit" class="btn btn-color w-100 mb-3">
+              Sign UP
+            </button>
+            <p>
+              You have an account
+              <a href="../index.html" id="signInAnchor" class="text-capitalize text-white"
+                >Sign In</a
+              >
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+    <script src="../bootstrap-5.3.3-dist/js/bootstrap.bundle.js"></script>
+    <script src="../index.js"></script>
+  </body>
+</html>
