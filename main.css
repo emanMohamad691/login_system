@@ -11,7 +11,12 @@ body {
     color: var(--main-color);
 }
 
-.container > form,
+.container {
+    display: flex;
+    
+}
+
+
 .container > div {
     background-color: var(--background-color);
     box-shadow: -5px 2px 54px -9px rgba(0, 0, 0, 1);
@@ -70,4 +75,17 @@ text-decoration: none;
 #signUpAnchor:hover,
 #signInAnchor:hover {
 text-decoration: underline;
+}
+
+@media (min-width : 768px){
+    .container > div {
+        width: 75%;
+    }
+}
+
+@media (min-width : 992px){
+    .container > div,
+    .container {
+        width: 75%;
+    }
 }
